@@ -2,13 +2,13 @@
 
 @{
     ViewData["Title"] = "Grouping Search";
-    //DateTime minDate = DateTime.Parse(ViewData["minDate"] as string);
-    //DateTime maxDate = DateTime.Parse(ViewData["maxDate"] as string);
+    DateTime minDate = DateTime.Parse(ViewData["minDate"] as string);
+    DateTime maxDate = DateTime.Parse(ViewData["maxDate"] as string);
 }
 
 <h2>@ViewData["Title"]</h2>
 
-@*<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
         <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
@@ -29,13 +29,13 @@
 @foreach (var departmentGroup in Model)
 {
     <div class="panel panel-primary">
-        <div class="panel-heading">
+        <div class="panel-heading" style="background-color: slategray; color: white">
             <h3 class="panel-title">Department @departmentGroup.Key.Name, Total sales = @departmentGroup.Key.TotalSales(minDate, maxDate).ToString("F2")</h3>
         </div>
         <div class="panel-body">
             <table class="table table-striped table-hover">
                 <thead>
-                    <tr class="success">
+                    <tr class="bg-primary">
                         <th>
                             Date
                         </th>
@@ -72,4 +72,4 @@
             </table>
         </div>
     </div>
-}*@
+}
